@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flamenka Jeans</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="estilos/estilo.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="./imagenes/SobreNosotras/favicon.ico">
+</head>
+<body>
+
+  <!-- Header -->
+
+
+  <header class="container-fluid text-center mt-4">
+      
+    <!-- Navbar -->
+    <nav class="container-fluid navbar navbar-expand-lg bg-white sticky-top text-start">
+      <div class="container m-auto">
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo03" aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        
+        <a class="navbar-brand marca fw-bolder fs-2" href="./index.html">
+          <img src="./imagenes/SobreNosotras/logo.png" alt="Logo" width="80" height="50" class="d-flex">
+        </a>
+        <span class="navbar-text d-flex d-lg-none">
+          <a href="" data-bs-toggle="modal" data-bs-target="#modalCarrito" class="btnModalSM">
+              <img src="./imagenes/Productos/Iconos/carrito.png" class="iconoCarrito" alt="Icono shop"> <span class="translate-middle badge rounded-pill bg-acento"></span>
+          </a>
+        </span>
+        
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Shop online</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Productos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Cómo comprar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="">Contacto</a>
+            </li>
+          </ul>
+        </div>
+          <span class="navbar-text d-none d-lg-flex">
+            <a href="" data-bs-toggle="modal" data-bs-target="#modalCarrito" class="btnModal">
+                <img src="./imagenes/Productos/Iconos/carrito.png" class="iconoCarrito" alt="Icono shop"> <span class="translate-middle badge badgeLG rounded-pill bg-acento"></span>
+            </a>
+          </span>
+        
+      </div>
+    </nav>
+
+      <h1>Flamenka Jeans </h1>
+
+      <!-- Modal carrito / el contenido se carga de manera dinámica con DOM -->
+        <div class="modal fade" id="modalCarrito" tabindex="-1" aria-labelledby="modalCarrito" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="modalCarrito">Carrito</h2>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+
+
+              
+              </div>
+
+              <div class="contenedorPrecio modal-body fs-5 fw-bold d-flex row">
+                
+
+      
+              </div>
+
+              <div class="modal-footer contenedorBtnes">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Seguir comprando</button>
+                <button type="button" class="btn btn-primary btn-acento btnAbrirForms" id="btnPagar"> Ir a pagar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal datos de compra  -->
+
+        <div class="modal fade" id="modalDatosCompra" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalToggleLabel2">Completa los datos de compra</h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+              </div>
+              <div class="modal-body">
+                <div class="progress" role="progressbar" aria-label="progresoPago" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 5px">
+                  <div class="progress-bar bg-acento progress-bar-striped progress-bar-animated" style="width: 50%"></div>
+                </div>
+
+                <!-- Formulario compra dinámico con DOM -->
+                <div class="textoWaves pt-4">
+                 
+                  <div class="w-75 m-auto mt-4 p-1">
+                    <form action="" method="post" id="formDatos"  class="form-floating">
+                    
+
+                    </form>
+
+                  </div>
+              </div>
+              </div>
+              <div class="modal-footer">
+                <button class="btn btn-secondary" data-bs-target="#modalCarrito" data-bs-toggle="modal">Editar el carrito</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal pago -->
+
+        <div class="modal fade" id="modalPago" aria-hidden="true" aria-labelledby="exampleModalToggleLabel3" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalToggleLabel3">Realiza el pago</h1>
+
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+              </div>
+              <div class="modal-body">
+                <div class="progress" role="progressbar" aria-label="progresoPago" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="height: 5px">
+                  <div class="progress-bar bg-acento progress-bar-striped progress-bar-animated" style="width: 100%"></div>
+                </div>
+
+                <!-- Formulario para pagar dinámico con DOM -->
+
+                <div class="textoWaves pt-4">                  
+                  <div class="w-75 m-auto mt-4 p-1">
+                    <form action="" method="post" id="formPago">
+
+                      
+                      
+                    </form>
+                  </div>
+                </div>
+
+                
+              
+              </div>
+              <div class="modal-footer">
+
+                <button class="btn btn-primary btn-productos" data-bs-target="#modalDatosCompra" data-bs-toggle="modal">Volver al paso anterior</button>
+                <button class="btn btn-secondary" data-bs-target="#modalCarrito" data-bs-toggle="modal">Editar el carrito</button>
+                
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Modal Compra exitosa -->
+
+        <div class="modal fade" id="modalExitosa" aria-hidden="true" aria-labelledby="exampleModalToggleLabel4" tabindex="-1">
+          <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+              
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="exampleModalToggleLabel4">Estado de tu compra</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+
+              <div class="modal-body">
+                <h2> ¡Tu compra ha sido aprobada!</h2>   
+                <p> En los próximos días recibirás un mail de seguimiento de tu pedido </p>                                         
+              </div>                                
+              
+            
+              <div class="modal-footer">
+                
+              <button class="btn btn-primary btn-acento" data-bs-dismiss="modal"> Seguir comprando </button>
+            
+              </div>
+            </div>
+          </div>
+        </div>
+        
+
+        <!-- Modal Detalles producto / el contenido se carga de manera dinámica con DOM -->
+        <div class="modal fade" id="modalDetalle" tabindex="-1" aria-labelledby="modalDetalles" aria-hidden="true">
+          <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h2 class="modal-title fs-5" id="modalDetalles">Detalle producto</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                  <div class="container text-center">
+
+                      <div class="row">
+              
+                          <div class="col-12 col-lg-6 px-1  d-flex flex-direction-row justify-content-center align-items-center imagenesDetalle">
+                              
+                          </div>       
+              
+                          <div class="col-12 col-lg-6  my-5 text-lg-start ps-md-5 contenedorDetalles">
+                                                       
+                          
+                          </div>
+              
+              
+              
+                      </div>
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-acento" data-bs-dismiss="modal">Seguir comprando</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        
+        
+
+        
+
+    </header>
+
+    <main class="container mt-3 mt-md-5 text-center">
+
+      <!-- Seccion shop online -->
+
+      <h2 class="mt-3 mt-md-5 fs-3">Shop Online</h2>
+
+      <div class="btn-group mt-3 mt-md-5" role="group" aria-label="Basic outlined example">
+          <button type="button" class="btn btnTodos btn-outline-primary">Todos los productos</button>
+          <button type="button" class="btnRemeras btn btn-outline-primary">Remeras y tops</button>
+          <button type="button" class="btn btnVestidos btn-outline-primary" data-bs-target="#modalBanner" data-bs-toggle="modal">Polleras y vestidos</button>
+          <button type="button" class="btn btnAbrigos btn-outline-primary">Abrigos</button>
+      </div>
+    
+
+      <!-- Div contenedor de productos - las cards se generan de manera dinámica con DOM - JS -->
+
+      <div class="divProductos row mt-1 mt-md-2 g-2">
+
+
+
+      </div>
+
+
+
+      <!-- Modales con Banners -->
+      <!-- Banner - estructura - imagen al azar -->
+      <div class="modal fade" id="modalBanner" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+          <div class="modal-content">               
+            <div class="modal-body bodyBanner">
+              
+                
+              
+            </div>
+          </div>
+        </div>
+      </div>
+
+  </main>
+
+  <footer class="container-fluid mt-5  px-5 pt-3 bg-black text-white text-center">
+      <div class="container m-auto row">
+          <div class="col-12 col-lg-4 d-lg-flex flex-row mb-5 text-lg-start">
+            <div class="flex-column">
+              <h2 class="fs-5">María Florencia Rossi</h2>
+              <p> maria.rossi@davinci.edu.ar </p>
+              <div class="iconos">
+                  <a href="https://www.linkedin.com/in/mar%C3%ADa-florencia-rossi/" target="_blank"  class="text-black"> <img src="./imagenes/Productos/Iconos/linkedin.png" alt="Icono de Linkedin"> </a> 
+                  <a href="https://www.behance.net/flor-rossi" target="_blank" class="text-black"> <img src="./imagenes/Productos/Iconos/behance.png" alt="Icono de Behance">  </a>
+              </div>
+            </div>
+          </div>
+  
+          <div class="col-12 col-md-6 col-lg-4 text-lg-center">
+              <h2 class="fs-5">Ver más</h2>
+              <ul class="list-unstyled">
+                  <li>
+                  <a href="./index.html" class=" nav-link"> Inicio </a>
+                  </li>
+                  <li>
+                  <a href="./paginas/comocomprar.html" class="nav-link">  Cómo comprar </a>
+                  </li>
+                  <li>
+                  <a href="./paginas/shoponline.html" class="nav-link"> Shop online </a>
+                  </li>
+                  <li>
+                  <a href="./paginas/contacto.html" class="nav-link">  Contacto </a>
+                  </li>
+              </ul>
+          </div>
+  
+          <div class="col-12 col-md-6 col-lg-4 text-lg-center">
+              <h2 class="fs-5">Nuestras prendas</h2>
+              <ul class="list-unstyled">
+                  <li>Remeras y tops</li>
+                  <li>Pantalones</li>
+                  <li>Vestidos</li>
+                  <li>Ropa de hombre</li>
+              </ul>
+          </div>
+  
+      </div>
+  
+  </footer>
+
+<script src="index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>   
+
+</html>
