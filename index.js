@@ -545,6 +545,7 @@ btnPagar.removeAttribute("disabled");
 
 productosCarrito.forEach((productoCarrito) => {
 
+    if (productoCarrito.cantidadPedida > 0) {
     // Creo la card para cada producto - la card de carrito es distinta a la de productos en la sección SHOP ONLINE
 
 
@@ -648,6 +649,7 @@ productosCarrito.forEach((productoCarrito) => {
       let i = productosCarrito.indexOf(eliminarProducto);
       productosCarrito.splice(i, 1);
       productosCarrito.push(productoCarrito); 
+      
 
       // Si tengo al menos un producto, se activa el botón de resta
 
@@ -707,6 +709,7 @@ productosCarrito.forEach((productoCarrito) => {
       let contenedorCard = contenedorRow.parentElement;
       let codigoProducto = contenedorCard.dataset.codigo;  
       productoCarrito.cantidadPedida = contador;  
+      console.log(cantidadARestar);
 
       if (contador >= 0) {
       cantidadARestar.innerText = contador;
@@ -723,6 +726,7 @@ productosCarrito.forEach((productoCarrito) => {
       btnPagar.setAttribute("disabled", "`true`");
       btnRestar.setAttribute("disabled", "`true`");
       btnEliminar.setAttribute("disabled", "`true`");
+      productosCarrito.push(productoCarrito);
       } else {
       let eliminarProducto = productosCarrito.filter((productoCarrito) => productoCarrito.codigo == codigoProducto)[0];
       let i = productosCarrito.indexOf(eliminarProducto);
@@ -817,7 +821,7 @@ productosCarrito.forEach((productoCarrito) => {
     localStorage.setItem("productosCarrito", JSON.stringify(productosCarrito));
 
     });
-
+  }
 });
 
   /*********************** TOTAL A PAGAR AL FINAL DEL CARRITO ***********************/
