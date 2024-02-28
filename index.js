@@ -723,7 +723,6 @@ productosCarrito.forEach((productoCarrito) => {
       let eliminarProducto = productosCarrito.filter((productoCarrito) => productoCarrito.codigo == codigoProducto)[0];
       let i = productosCarrito.indexOf(eliminarProducto);
       productosCarrito.splice(i, 1);
-      btnPagar.setAttribute("disabled", "`true`");
       btnRestar.setAttribute("disabled", "`true`");
       btnEliminar.setAttribute("disabled", "`true`");
       productosCarrito.push(productoCarrito);
